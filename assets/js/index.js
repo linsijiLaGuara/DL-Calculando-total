@@ -14,7 +14,6 @@ valorTotal.innerHTML = precioTotal;
 //debe multiploicar precio base por el valor total
 
 var cantidadTotal = Number(document.querySelector(".cantidad").innerHTML);
-console.log(cantidadTotal);
 
 function crearFactura() {
   console.log("valor factura " + cantidadTotal * precio);
@@ -22,19 +21,20 @@ function crearFactura() {
   valorTotal.innerHTML = precioTotal;
 }
 
+// se agrega suma y resta para aumentar o restar valor cantidad
+
 function aunmentarCantidad() {
   aunmenta = cantidadTotal + 1;
   cantidadTotal = aunmenta;
-  console.log(cantidadTotal);
   document.querySelector(".cantidad").innerHTML = cantidadTotal;
   crearFactura();
 }
 
 function restarCantidad() {
+  //se agrega condicion para que el boton no reste cuando este en 0
   if (cantidadTotal != 0) {
     resta = cantidadTotal - 1;
     cantidadTotal = resta;
-    console.log(cantidadTotal);
     document.querySelector(".cantidad").innerHTML = cantidadTotal;
     crearFactura();
   }
